@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets'
+import logo from '../../../public/logo.svg'
+---
+
+<header class=''>
+	<a href='/'>
+		<Image src={logo} alt='Website logo' width='120' height='80' />
+	</a>
+	<nav>
+		<ul class=''>
+			<li><a href='/about'>About</a></li>
+			<li><a href='/projects'>Projects</a></li>
+			<li><a href='/thoughts'>Thoughts</a></li>
+			<li><a href='/contact'>Contact</a></li>
+		</ul>
+	</nav>
+</header>

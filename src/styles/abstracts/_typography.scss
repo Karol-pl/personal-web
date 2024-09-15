@@ -1,0 +1,37 @@
+$ff-primary: 'Oswald';
+$ff-highlight: 'Cut the crap';
+
+$font-sizes: (
+  12xl: 12rem,
+  9xl: 10rem,
+  6xl: 7rem,
+  5xl: 6rem,
+  4xl: 5rem,
+  3xl: 4rem,
+  2xl: 3rem,
+  xl: 2rem,
+  lg: 1.5rem,
+  base: 1.125rem,
+  sm: 1rem,
+  xs: 0.75rem,
+);
+
+$font-weights: (
+  light: 300,
+  normal: 400,
+  bold: 500,
+);
+
+$text-transform: (
+  uppercase: uppercase,
+  lowercase: lowercase,
+);
+
+$line-heights: (
+  2xl: 1.5,
+  xl: 1.2,
+  lg: 1.1,
+  base: 1,
+  sm: 0.9,
+  xs: 0.75,
+);
