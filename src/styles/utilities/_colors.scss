@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 @each $color, $values in $colors {
   @each $key, $value in $values {
@@ -14,7 +14,7 @@
       .text-#{$color}--#{$key} {
         color: $value;
       }
-  
+
       .bg-#{$color}--#{$key} {
         background-color: $value;
       }

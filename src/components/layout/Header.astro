@@ -3,12 +3,38 @@ import { Image } from 'astro:assets'
 import logo from '../../../public/logo.svg'
 ---
 
-<header class=''>
+<header class='header'>
 	<a href='/'>
-		<Image src={logo} alt='Website logo' width='120' height='80' />
+		<Image src={logo} alt='Website logo' width='120' height='80' title='Home' />
 	</a>
-	<nav>
-		<ul class=''>
+	<nav class='nav'>
+		<button class='burger' aria-controls='main-nav'>
+			<svg stroke='#7C3503' class='hamburger' viewBox='0 0 100 100' width='24' height='24'>
+				<line
+					class='line top'
+					x1='90'
+					x2='10'
+					y1='50'
+					y2='50'
+					stroke-width='10'
+					stroke-linecap='round'
+					stroke-dasharray='80'
+					stroke-dashoffset='0'>
+				</line>
+				<line
+					class='line bottom'
+					x1='10'
+					x2='90'
+					y1='70'
+					y2='70'
+					stroke-width='10'
+					stroke-linecap='round'
+					stroke-dasharray='80'
+					stroke-dashoffset='0'>
+				</line>
+			</svg>
+		</button>
+		<ul id='main-nav'>
 			<li><a href='/about'>About</a></li>
 			<li><a href='/projects'>Projects</a></li>
 			<li><a href='/thoughts'>Thoughts</a></li>
@@ -16,3 +42,13 @@ import logo from '../../../public/logo.svg'
 		</ul>
 	</nav>
 </header>
+
+<script>
+	const burger = document.querySelector('.burger')!
+	const navList = document.querySelector('#main-nav')!
+
+	burger.addEventListener('click', () => {
+		burger.toggleAttribute('aria-expanded')
+		navList.classList.toggle('open')
+	})
+</script>
