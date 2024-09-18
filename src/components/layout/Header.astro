@@ -34,7 +34,7 @@ import logo from '../../../public/logo.svg'
 				</line>
 			</svg>
 		</button>
-		<ul id='main-nav' hidden>
+		<ul id='main-nav'>
 			<li><a href='/about'>About</a></li>
 			<li><a href='/projects'>Projects</a></li>
 			<li><a href='/thoughts'>Thoughts</a></li>
@@ -49,6 +49,6 @@ import logo from '../../../public/logo.svg'
 
 	burger.addEventListener('click', () => {
 		burger.toggleAttribute('aria-expanded')
-		navList.toggleAttribute('hidden')
+		navList.classList.toggle('open')
 	})
 </script>
