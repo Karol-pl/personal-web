@@ -1,0 +1,150 @@
+@use "../abstracts" as *;
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: min(100% - 3rem, 90rem);
+  margin-inline: auto;
+  background-color: hsl(0, 0, 9, 50%);
+  backdrop-filter: blur(12px);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+
+  > a {
+    width: max-content;
+  }
+}
+
+.nav {
+  position: relative;
+  > button {
+    background-color: transparent;
+    border: none;
+
+    .line {
+      animation: burger-open 300ms forwards;
+
+      &.top {
+        --rotation: 45deg;
+        transform-origin: 50px 50px;
+      }
+
+      &.bottom {
+        --rotation: -45deg;
+        transform-origin: 25px 60px;
+      }
+    }
+
+    > svg {
+      transition: all 200ms ease-in-out;
+    }
+
+    &[aria-expanded] {
+      .line {
+        animation: burger-close 300ms forwards;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      > svg {
+        stroke: clr(accent, 500);
+      }
+    }
+  }
+
+  > ul {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 200%;
+    left: -230%;
+    border: 1px solid clr(gray, 900);
+    background-color: transparent;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1rem;
+    transition: all 300ms ease-in-out;
+    margin: 0;
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    li {
+      a {
+        text-decoration: none;
+        color: clr(accent, 700);
+        transition: color 300ms ease-in-out;
+        padding: 0.5rem 1rem;
+
+        &:hover,
+        &:focus-visible {
+          color: clr(accent, 500);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  .nav {
+    > button {
+      display: none;
+    }
+
+    > ul {
+      position: relative;
+      visibility: visible;
+      opacity: 1;
+      flex-direction: row;
+      top: 0;
+      left: 0;
+      border: none;
+      align-items: center;
+      justify-content: space-between;
+      transition: none;
+      padding: 0;
+    }
+  }
+}
+
+@keyframes burger-close {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 79.9;
+  }
+  60% {
+    stroke-dashoffset: 79.9;
+    rotate: var(--rotation);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+}
+
+@keyframes burger-open {
+  0% {
+    stroke-dashoffset: 0;
+    rotate: var(--rotation);
+  }
+  40% {
+    stroke-dashoffset: 79.9;
+    rotate: var(--rotation);
+  }
+  60% {
+    stroke-dashoffset: 79.9;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

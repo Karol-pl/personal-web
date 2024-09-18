@@ -1,10 +1,14 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 // font-sizes
 @each $size-name, $size-value in $font-sizes {
   @if ($size-value >= 2) {
     .text-#{$size-name} {
-      font-size: clamp(calc(#{$size-value} * 0.3), calc(($size-value / 1rem) / 87.5 * 100vw), #{$size-value});
+      font-size: clamp(
+        calc(#{$size-value} * 0.3),
+        calc(($size-value / 1rem) / 90 * 100vw),
+        #{$size-value}
+      );
       font-weight: 500;
     }
   } @else {
@@ -22,14 +26,16 @@
   }
 }
 
+// text-transform
 @each $transform, $transform-value in $text-transform {
   .text-#{$transform} {
     text-transform: $transform-value;
   }
 }
 
-@each $line-height, $line-height-value in $line-heights {
-  .text-lh-#{$line-height} {
-    line-height: $line-height-value;
+// text-align
+@each $align, $align-value in $text-align {
+  .text-#{$align} {
+    text-align: $align-value;
   }
 }

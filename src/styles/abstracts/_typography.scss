@@ -1,5 +1,5 @@
-$ff-primary: 'Oswald';
-$ff-highlight: 'Cut the crap';
+$ff-primary: "Oswald";
+$ff-highlight: "Cut the crap";
 
 $font-sizes: (
   12xl: 12rem,
@@ -27,11 +27,9 @@ $text-transform: (
   lowercase: lowercase,
 );
 
-$line-heights: (
-  2xl: 1.5,
-  xl: 1.2,
-  lg: 1.1,
-  base: 1,
-  sm: 0.9,
-  xs: 0.75,
+$text-align: (
+  left: left,
+  center: center,
+  right: right,
+  justify: justify,
 );

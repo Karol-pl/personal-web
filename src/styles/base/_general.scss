@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 html {
   scroll-behavior: smooth;
@@ -6,14 +6,15 @@ html {
 
 body {
   min-height: 100dvh;
+  margin: 0;
+  padding: 0.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: $ff-primary, system-ui, 'sans-serif';
+  font-family: $ff-primary, system-ui, "sans-serif";
   font-size: fs(base);
   background-color: $color-black;
   color: clr(gray, 100);
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   html {
