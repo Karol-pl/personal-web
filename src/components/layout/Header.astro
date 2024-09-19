@@ -35,20 +35,29 @@ import logo from '../../../public/logo.svg'
 			</svg>
 		</button>
 		<ul id='main-nav'>
-			<li><a href='/about'>About</a></li>
-			<li><a href='/projects'>Projects</a></li>
-			<li><a href='/thoughts'>Thoughts</a></li>
-			<li><a href='/contact'>Contact</a></li>
+			<li><a href='/#about'>About</a></li>
+			<li><a href='/#projects'>Projects</a></li>
+			<li><a href='/#thoughts'>Thoughts</a></li>
+			<li><a href='/#contact'>Contact</a></li>
 		</ul>
 	</nav>
 </header>
 
-<script>
-	const burger = document.querySelector('.burger')!
-	const navList = document.querySelector('#main-nav')!
+<script is:inline data-astro-rerun>
+	const burger = document.querySelector('.burger')
+	const navList = document.querySelector('#main-nav')
+	const navLinks = document.querySelectorAll('#main-nav a')
+	const current = window.location.href
 
 	burger.addEventListener('click', () => {
 		burger.toggleAttribute('aria-expanded')
 		navList.classList.toggle('open')
+	})
+
+	navLinks.forEach((link) => {
+		const anchor = link
+		if (anchor.href === current) {
+			anchor.classList.add('active')
+		}
 	})
 </script>
