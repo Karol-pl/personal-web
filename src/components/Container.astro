@@ -1,7 +1,7 @@
 ---
-
+const { styles } = Astro.props
 ---
 
-<div class='container'>
+<div class={`container ${styles}`}>
 	<slot />
 </div>

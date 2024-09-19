@@ -1,0 +1,11 @@
+---
+type Props = {
+	text: string
+	href: string
+	styles: string
+}
+
+const { text, href, styles }: Props = Astro.props
+---
+
+<a class={`cta ${styles}`} href={href}>{text}</a>
