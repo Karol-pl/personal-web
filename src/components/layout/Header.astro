@@ -46,18 +46,9 @@ import logo from '../../../public/logo.svg'
 <script is:inline data-astro-rerun>
 	const burger = document.querySelector('.burger')
 	const navList = document.querySelector('#main-nav')
-	const navLinks = document.querySelectorAll('#main-nav a')
-	const current = window.location.href
 
 	burger.addEventListener('click', () => {
 		burger.toggleAttribute('aria-expanded')
 		navList.classList.toggle('open')
-	})
-
-	navLinks.forEach((link) => {
-		const anchor = link
-		if (anchor.href === current) {
-			anchor.classList.add('active')
-		}
 	})
 </script>

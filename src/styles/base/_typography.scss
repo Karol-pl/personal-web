@@ -1,11 +1,5 @@
 @font-face {
-  font-family: 'Oswald';
-  src: url('/fonts/Oswald-VariableFont_wght.ttf') format('truetype')
-    tech(variations);
-  font-weight: 300 400 500 700;
-}
-
-@font-face {
-  font-family: 'Cut-The-Crap';
-  src: url('/fonts/Cut-The-Crap.ttf') format('truetype');
+  font-family: "Handjet";
+  src: url("/fonts/Handjet.ttf") format("truetype") tech(variations);
+  font-weight: 300 400 500 600;
 }
