@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 @each $size-key, $size-value in $sizes {
   .m {
@@ -58,6 +58,12 @@
 
     &r-#{$size-key} {
       padding-inline-end: $size-value;
+    }
+  }
+
+  .gap {
+    &-#{$size-key} {
+      gap: $size-value;
     }
   }
 }
