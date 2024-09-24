@@ -1,0 +1,9 @@
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(20rem, 1fr));
+
+  p {
+    width: min(75ch, 100%);
+    margin-block-end: 1rem;
+  }
+}
