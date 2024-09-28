@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 interface Props {
 	height?: number
 	width?: number
@@ -83,7 +85,7 @@ const quantity = list.length
 		{
 			list.map((item, i) => (
 				<li style={`--position: ${i}`}>
-					<img src={item.url} alt={item.id} width={128} height={128} title={item.id} />
+					<Image src={item.url} alt={item.id} width={128} height={128} title={item.id} />
 				</li>
 			))
 		}
