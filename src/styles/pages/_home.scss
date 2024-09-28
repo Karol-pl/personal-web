@@ -1,9 +1,22 @@
 .about-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+  gap: 1rem;
 
   p {
     width: min(75ch, 100%);
     margin-block-end: 1rem;
   }
+}
+
+.about-textual {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
 }

@@ -4,6 +4,30 @@ import Cta from '../components/Cta.astro'
 import Greeting from '../components/Greeting.astro'
 import Scroller from '../components/Scroller.astro'
 import Layout from '../layouts/Layout.astro'
+
+interface GalleryImage {
+	url: string
+	alt: string
+}
+
+const gallery: GalleryImage[] = [
+	{
+		url: '/asset1.webp',
+		alt: 'some alt 1',
+	},
+	{
+		url: '/asset2.webp',
+		alt: 'some alt 2',
+	},
+	{
+		url: '/asset3.webp',
+		alt: 'some alt 3',
+	},
+	{
+		url: '/asset4.webp',
+		alt: 'some alt 4',
+	},
+]
 ---
 
 <Layout title='Hello from /'>
@@ -25,11 +49,13 @@ import Layout from '../layouts/Layout.astro'
 		</section>
 		<section id='about'>
 			<Container styles='about-container py-12'>
-				<div>
+				<div class='about-textual'>
 					<p>
 						I’m currently working as a front-end developer at <a
 							class='text-bold text-accent--500'
-							href='https://text.com'>text|</a
+							href='https://text.com'
+							target='_blank'
+							rel='noopener noreferrer'>text|</a
 						>, where I get to bring creative and user-friendly web experiences to life. My passion
 						for coding and design drives me to constantly learn and innovate in the ever-evolving
 						tech landscape.
@@ -46,9 +72,11 @@ import Layout from '../layouts/Layout.astro'
 						friends.
 					</p>
 					<p>Also I'm a foodie, but enough about that, here's the tech I use daily:</p>
-					<Scroller />
+					<Scroller height={4} width={4} />
 				</div>
-				<div></div>
+				<div class='about-gallery'>
+					{gallery.map(({ url, alt }: GalleryImage) => <img src={url} alt={alt} />)}
+				</div>
 			</Container>
 		</section>
 		<section id='projects'>

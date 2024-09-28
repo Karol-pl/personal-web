@@ -42,6 +42,8 @@
   }
 
   img {
+    width: var(--width);
+    height: var(--height);
     aspect-ratio: 1;
   }
 
