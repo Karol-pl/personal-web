@@ -2,7 +2,9 @@
 
 .header {
   position: sticky;
-  top: 1.5rem;
+  background-color: inherit;
+  z-index: 100;
+  top: 0;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
