@@ -3,8 +3,8 @@ const navLinks = document.querySelectorAll("nav a");
 
 const config = {
   root: null,
-  rootMargin: "0px",
-  threshold: 0.7,
+  rootMargin: "-30px 0px -60%",
+  threshold: 1,
 };
 
 let observer = new IntersectionObserver((entries) => {
