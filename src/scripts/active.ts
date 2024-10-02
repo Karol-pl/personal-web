@@ -1,3 +1,5 @@
+// Active navigation links
+
 const sections = document.querySelectorAll("section");
 const links = document.querySelectorAll("[data-after]");
 
@@ -10,13 +12,10 @@ const config = {
 let observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      console.log(`#${entry.target.id} is intersecting`);
       ioHandler(entry);
     }
   });
 }, config);
-
-console.log(observer);
 
 sections.forEach((section) => observer.observe(section));
 
@@ -31,3 +30,13 @@ const ioHandler = (entry: IntersectionObserverEntry) => {
     }
   });
 };
+
+// Active gallery images
+
+const galleryImages = document.querySelectorAll(".about-gallery img");
+
+galleryImages.forEach((image) => {
+  image.addEventListener("click", () => {
+    image.classList.toggle("active");
+  });
+});

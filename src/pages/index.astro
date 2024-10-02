@@ -7,24 +7,29 @@ import Scroller from '../components/Scroller.astro'
 import Layout from '../layouts/Layout.astro'
 
 interface GalleryImage {
+	id: number
 	url: string
 	alt: string
 }
 
 const gallery: GalleryImage[] = [
 	{
+		id: 1,
 		url: '/asset1.webp',
 		alt: 'Me, my fiancée and Shiva',
 	},
 	{
+		id: 2,
 		url: '/asset2.webp',
 		alt: 'Road trip on Ilhabela, SP',
 	},
 	{
+		id: 3,
 		url: '/asset3.webp',
 		alt: 'View of ocean',
 	},
 	{
+		id: 4,
 		url: '/asset4.webp',
 		alt: 'Burgers and drinks',
 	},
@@ -34,9 +39,9 @@ const gallery: GalleryImage[] = [
 <Layout title='Karol Homziuk'>
 	<main class='my-10'>
 		<section id='hero'>
-			<Container styles='flex flex-column py-12'>
+			<Container styles='flex flex-column py-15'>
 				<h1 class='text-6xl text-accent--500 text-center'>Good <Greeting /></h1>
-				<p class='pt-8 text-center text-lg'>
+				<p class='pt-10 text-center text-lg'>
 					I’m a software developer with 3+ years of experience. I excel at creating exceptional user
 					experiences across various environments. My expertise spans a wide range of tools,
 					methodologies, and frameworks, allowing me to adapt seamlessly to diverse project
@@ -45,12 +50,12 @@ const gallery: GalleryImage[] = [
 				<Cta
 					href='/#about'
 					text='get to know me'
-					styles='text-uppercase text-sm self-center mt-8 font-highlight'
+					styles='text-uppercase text-sm self-center mt-10 font-highlight'
 				/>
 			</Container>
 		</section>
 		<section id='about'>
-			<Container styles='about-container py-12'>
+			<Container styles='about-container py-15'>
 				<div class='about-textual'>
 					<p>
 						I’m currently working as a front-end developer at <a
@@ -78,15 +83,15 @@ const gallery: GalleryImage[] = [
 				</div>
 				<div class='about-gallery'>
 					{
-						gallery.map(({ url, alt }: GalleryImage) => (
-							<Image src={url} alt={alt} width={316} height={272} />
+						gallery.map(({ id, url, alt }: GalleryImage) => (
+							<Image src={url} alt={alt} class=`image-${id}` width={316} height={272} />
 						))
 					}
 				</div>
 			</Container>
 		</section>
 		<section id='thoughts'>
-			<Container>
+			<Container class='py-15'>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam saepe laudantium
 					cupiditate quidem ea corrupti aspernatur illo animi architecto expedita.

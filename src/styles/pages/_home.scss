@@ -20,8 +20,10 @@ section {
 }
 
 .about-gallery {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 0.5rem;
 
   img {
@@ -29,11 +31,16 @@ section {
     height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
-    transition: scale 0.2s;
 
-    &:hover {
+    &:hover,
+    .active {
       cursor: pointer;
-      scale: 1.05;
+    }
+
+    &.active {
+      position: absolute;
+      grid-column: span 2;
+      grid-row: span 2;
     }
   }
 }
