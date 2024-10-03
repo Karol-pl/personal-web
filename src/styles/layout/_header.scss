@@ -8,10 +8,9 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  width: min(100% - 3rem, 90rem);
+  width: min(100%, 90rem);
   margin-inline: auto;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 2rem;
 
   > a {
     width: max-content;
