@@ -84,7 +84,7 @@ const gallery: GalleryImage[] = [
 				<div class='about-gallery'>
 					{
 						gallery.map(({ id, url, alt }: GalleryImage) => (
-							<Image src={url} alt={alt} class=`image-${id}` width={316} height={272} />
+							<Image tabindex={0} src={url} alt={alt} class=`image-${id}` width={316} height={272} />
 						))
 					}
 				</div>

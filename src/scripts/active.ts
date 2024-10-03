@@ -1,5 +1,4 @@
 // Active navigation links
-
 const sections = document.querySelectorAll("section");
 const links = document.querySelectorAll("[data-after]");
 
@@ -21,7 +20,6 @@ sections.forEach((section) => observer.observe(section));
 
 const ioHandler = (entry: IntersectionObserverEntry) => {
   const id = entry.target.id;
-  console.log("entry id", id);
 
   links.forEach((navlink) => {
     navlink.classList.remove("active");
@@ -32,11 +30,19 @@ const ioHandler = (entry: IntersectionObserverEntry) => {
 };
 
 // Active gallery images
-
 const galleryImages = document.querySelectorAll(".about-gallery img");
 
 galleryImages.forEach((image) => {
   image.addEventListener("click", () => {
     image.classList.toggle("active");
   });
+
+  (image as HTMLImageElement).addEventListener(
+    "keydown",
+    (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        image.classList.toggle("active");
+      }
+    },
+  );
 });

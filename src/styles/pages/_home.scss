@@ -47,20 +47,24 @@ section {
   &:has(.image-1.active) {
     grid-template-columns: 100% 0%;
     grid-template-rows: 100% 0%;
+    gap: 0%;
   }
 
   &:has(.image-2.active) {
     grid-template-columns: 0% 100%;
     grid-template-rows: 100% 0%;
+    gap: 0%;
   }
 
   &:has(.image-3.active) {
     grid-template-columns: 100% 0%;
     grid-template-rows: 0% 100%;
+    gap: 0%;
   }
 
   &:has(.image-4.active) {
     grid-template-columns: 0% 100%;
     grid-template-rows: 0% 100%;
+    gap: 0%;
   }
 }
