@@ -1,0 +1,15 @@
+---
+interface Props {
+	title: string
+	content: string
+	date: string
+}
+
+const { title, content, date }: Props = Astro.props
+---
+
+<div class='thought'>
+	<h3>{title}</h3>
+	<time datetime={date}>{date}</time>
+	<p>{content}</p>
+</div>

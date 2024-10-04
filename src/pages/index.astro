@@ -5,6 +5,7 @@ import Cta from '../components/Cta.astro'
 import Greeting from '../components/Greeting.astro'
 import Scroller from '../components/Scroller.astro'
 import Layout from '../layouts/Layout.astro'
+import Thought from '../components/Thought.astro'
 
 interface GalleryImage {
 	id: number
@@ -92,19 +93,9 @@ const gallery: GalleryImage[] = [
 		</section>
 		<section id='thoughts'>
 			<Container class='py-15'>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam saepe laudantium
-					cupiditate quidem ea corrupti aspernatur illo animi architecto expedita.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam saepe laudantium
-					cupiditate quidem ea corrupti aspernatur illo animi architecto expedita.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam saepe laudantium
-					cupiditate quidem ea corrupti aspernatur illo animi architecto expedita.
-				</p>
+				<Thought title="Thought1" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem fugiat, ab perferendis nobis ipsum corrupti consequatur numquam debitis doloribus exercitationem!" date="14-09-2024" />
 			</Container>
 		</section>
 	</main>
 </Layout>
+
