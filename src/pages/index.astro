@@ -6,6 +6,9 @@ import Greeting from '../components/Greeting.astro'
 import Scroller from '../components/Scroller.astro'
 import Layout from '../layouts/Layout.astro'
 import Thought from '../components/Thought.astro'
+import { getCollection } from 'astro:content'
+
+const thoughts = await getCollection('thoughts')
 
 interface GalleryImage {
 	id: number
@@ -93,7 +96,10 @@ const gallery: GalleryImage[] = [
 		</section>
 		<section id='thoughts'>
 			<Container class='py-15'>
-				<Thought title="Thought1" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem fugiat, ab perferendis nobis ipsum corrupti consequatur numquam debitis doloribus exercitationem!" date="14-09-2024" />
+				{thoughts.map((thought: any) => (
+					<Thought title={thought.data.title} content={thought.body.content} date={thought.data.date} />
+
+				))}
 			</Container>
 		</section>
 	</main>

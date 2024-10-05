@@ -2,7 +2,7 @@
 interface Props {
 	title: string
 	content: string
-	date: string
+	date: Date
 }
 
 const { title, content, date }: Props = Astro.props
@@ -10,6 +10,6 @@ const { title, content, date }: Props = Astro.props
 
 <div class='thought'>
 	<h3>{title}</h3>
-	<time datetime={date}>{date}</time>
+	<time datetime={date.toISOString()}>{date.toDateString()}</time>
 	<p>{content}</p>
 </div>
