@@ -8,7 +8,7 @@ interface Props {
 const { title, content, date }: Props = Astro.props
 ---
 
-<div class='thought'>
+<div class='note'>
 	<h3>{title}</h3>
 	<time datetime={date.toISOString()}>{date.toDateString()}</time>
 	<p>{content}</p>

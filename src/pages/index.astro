@@ -5,10 +5,10 @@ import Cta from '../components/Cta.astro'
 import Greeting from '../components/Greeting.astro'
 import Scroller from '../components/Scroller.astro'
 import Layout from '../layouts/Layout.astro'
-import Thought from '../components/Thought.astro'
 import { getCollection } from 'astro:content'
+import Note from '../components/Note.astro'
 
-const thoughts = await getCollection('thoughts')
+const notes = await getCollection('notes')
 
 interface GalleryImage {
 	id: number
@@ -53,7 +53,7 @@ const gallery: GalleryImage[] = [
 				</p>
 				<Cta
 					href='/#about'
-					text='get to know me'
+					text='more about me'
 					styles='text-uppercase text-sm self-center mt-10 font-highlight'
 				/>
 			</Container>
@@ -67,20 +67,20 @@ const gallery: GalleryImage[] = [
 							href='https://text.com'
 							target='_blank'
 							rel='noopener noreferrer'>text|</a
-						>, where I get to bring creative and user-friendly web experiences to life. My passion
-						for coding and design drives me to constantly learn and innovate in the ever-evolving
-						tech landscape.
+						>, where I get to bring creative and user-friendly web experiences to life. I enjoy my work as
+						it keeps me on my toes, always learning new things and finding fresh ways to create 
+						in this fast-paced tech world.
 					</p>
 					<p>
-						Outside of work, I reside in Brazil with my wonderful fiancée. We love exploring new
-						places together, whether it’s a weekend getaway to a nearby beach or an adventurous trip
-						to a different city. Traveling allows us to create unforgettable memories and
+						Outside of work, I reside in Brazil with my wonderful fiancée. We like exploring new
+						places together, whether it’s a weekend getaway to a nearby beach or a a longer trip to another place. 
+						Traveling allows us to create unforgettable memories and
 						experiences.
 					</p>
 					<p>
 						In addition to our travels, I’m an avid basketball player. Hitting the court is my way
 						of staying active and having fun. It’s also a great way to unwind and connect with
-						others.
+						other people.
 					</p>
 					<p>Also I'm a foodie, but enough about me, here's the tech I use daily:</p>
 					<Scroller height={4} width={4} />
@@ -94,10 +94,10 @@ const gallery: GalleryImage[] = [
 				</div>
 			</Container>
 		</section>
-		<section id='thoughts'>
-			<Container class='py-15'>
-				{thoughts.map((thought: any) => (
-					<Thought title={thought.data.title} content={thought.body.content} date={thought.data.date} />
+		<section id='notes'>
+			<Container styles="py-15">
+				{notes.map((note: any) => (
+					<Note title={note.data.title} content={note.body.content} date={note.data.date} />
 
 				))}
 			</Container>

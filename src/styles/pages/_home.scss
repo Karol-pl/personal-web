@@ -11,7 +11,7 @@ section {
   gap: 1rem;
 
   p {
-    padding-block-end: 1rem;
+    padding-block-end: 0.5rem;
   }
 }
 
@@ -19,7 +19,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: min(75ch, 100%);
+  width: min(100%, var(--size));
 }
 
 .about-gallery {

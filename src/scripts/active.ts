@@ -4,8 +4,8 @@ const links = document.querySelectorAll("[data-after]");
 
 const config = {
   root: null,
-  rootMargin: "-30px 0px -40%",
-  threshold: 0.5,
+  rootMargin: "0px",
+  threshold: 0.75,
 };
 
 let observer = new IntersectionObserver((entries) => {
