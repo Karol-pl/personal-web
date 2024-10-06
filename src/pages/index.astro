@@ -95,9 +95,9 @@ const gallery: GalleryImage[] = [
 			</Container>
 		</section>
 		<section id='notes'>
-			<Container styles="py-15">
+			<Container styles="flex flex-column gap-5 py-15">
 				{notes.map((note: any) => (
-					<Note title={note.data.title} content={note.body.content} date={note.data.date} />
+					<Note title={note.data.title} content={note.body} date={note.data.date} />
 
 				))}
 			</Container>
