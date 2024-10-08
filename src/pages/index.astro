@@ -10,6 +10,10 @@ import Note from '../components/Note.astro'
 
 const notes = await getCollection('notes')
 
+const sortedNotes = notes.sort((a: any, b: any) => {
+	return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+})
+
 interface GalleryImage {
 	id: number
 	url: string
@@ -96,7 +100,7 @@ const gallery: GalleryImage[] = [
 		</section>
 		<section id='notes'>
 			<Container styles="flex flex-column gap-5 py-15">
-				{notes.map((note: any) => (
+				{sortedNotes.map((note: any) => (
 					<Note title={note.data.title} content={note.body} date={note.data.date} />
 
 				))}
