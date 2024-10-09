@@ -8,11 +8,10 @@ import Layout from '../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
 import Note from '../components/Note.astro'
 
-const notes = await getCollection('notes')
-
-const sortedNotes = notes.sort((a: any, b: any) => {
+const notes = (await getCollection('notes')).sort((a, b) => {
 	return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 })
+
 
 interface GalleryImage {
 	id: number
@@ -100,7 +99,7 @@ const gallery: GalleryImage[] = [
 		</section>
 		<section id='notes'>
 			<Container styles="flex flex-column gap-5 py-15">
-				{sortedNotes.map((note: any) => (
+				{notes.map((note: any) => (
 					<Note title={note.data.title} content={note.body} date={note.data.date} />
 
 				))}
