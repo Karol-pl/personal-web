@@ -11,5 +11,5 @@ const { title, content, date }: Props = Astro.props
 <div class='note'>
 	<h3 class='text-xl'>{title}</h3>
 	<time class='text-sm' datetime={date.toISOString()}>{date.toDateString()}</time>
-	<p class='text-base'>{content}</p>
+	<div class='text-base'>{content}</div>
 </div>
