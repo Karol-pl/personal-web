@@ -100,9 +100,14 @@ const gallery: GalleryImage[] = [
 		</section>
 		<section id='notes'>
 			<Container styles="flex flex-column gap-5 py-15">
-				{notes.map((note) => (
-					<Note title={note.data.title} content={note.body} date={note.data.date} />
-				))}
+				{notes.map(async (note) => {
+					const { Content } = await note.render()
+					return (
+						<Note title={note.data.title}  date={note.data.date}>
+							<Content />
+						</Note>
+					)
+				})}
 			</Container>
 		</section>
 	</main>
