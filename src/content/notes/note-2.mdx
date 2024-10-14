@@ -1,33 +1,32 @@
 ---
-title: "Cool css one liner for containers"
-date: 2024-09-27
+title: "Cool css one liner"
+date: 2024-10-13
 ---
 
 import { Code } from "astro:components";
 
-Do you ever get tired of writing multiple lines of css (including media queries)
-to get your container to work how you would want it?
-Well, here's a nice little one liner that solves a lot:
+To keep it short. Here it is:
+
+<br />
 
 <Code
   lang="css"
-  code={`width: min(100%, [<your-max-width>]);`}
-  inline
+  code={`width: min(100%, [<max-width>]);`}
   theme="tokyo-night"
+  inline
 />
 
-Okay, so what does this do?
-It sets the width of the container to the minimum of 100% of the parent container
-or the max width you want to set.
+It make's use of css <Code
+lang="css"
+code={`min()`}
+theme="tokyo-night"
+inline
+/> function to set the width of the element to 100% of the parent, but not exceeding the specified max-width. All in a single, readable line.
 
-This is great because it means you don't have to write media queries to make
-sure your container doesn't go over a certain width on smaller screens.
-
-Also, you can add inline margin when you need to, like so:
+Bonus! But what about margins (or centering the element), here's the modified version:
 
 <Code
   lang="css"
-  code={`width: min(100% - [<your-smaller-devices-inline-margin>], [<your-max-width>]);`}
-  inline
+  code={`width: min(100% - (2 *[<smaller-devices-inline-margin>]), [<max-width>]);\nmargin-inline: auto;`}
   theme="tokyo-night"
 />
