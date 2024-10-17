@@ -13,7 +13,7 @@ body {
   font-family: $ff-primary, system-ui, "sans-serif";
   font-size: fs(base);
   background-color: $color-black;
-  color: clr(gray, 100);
+  color: clr("gray", 100);
 }
 
 @media (prefers-reduced-motion: reduce) {

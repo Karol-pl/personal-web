@@ -54,7 +54,7 @@
       cursor: pointer;
 
       > svg {
-        stroke: clr(accent, 500);
+        stroke: clr("accent", 500);
       }
     }
   }
@@ -65,7 +65,7 @@
     opacity: 0;
     top: 100%;
     left: -70%;
-    background-color: clr(gray, 900);
+    background-color: clr("gray", 900);
     border-radius: 0.5rem;
     padding: 1rem 1rem;
     display: flex;
@@ -91,14 +91,14 @@
         transition: translate 300ms;
         padding: 0;
         overflow: hidden;
-        color: clr(accent, 700);
+        color: clr("accent", 700);
 
         &::after {
           content: attr(data-after);
           position: absolute;
           display: inline-block;
           translate: 0 100%;
-          color: clr(accent, 500);
+          color: clr("accent", 500);
           left: 0;
           transition: translate 300ms;
         }

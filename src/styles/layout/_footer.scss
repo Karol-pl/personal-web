@@ -21,11 +21,11 @@
     width: max-content;
     text-decoration: none;
     border-radius: 1rem;
-    color: clr(accent, 700);
+    color: clr("accent", 700);
     transition: color 200ms ease-in-out;
 
     &:hover {
-      color: clr(accent, 500);
+      color: clr("accent", 500);
     }
   }
 }

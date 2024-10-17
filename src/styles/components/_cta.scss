@@ -2,14 +2,14 @@
 
 .cta {
   text-decoration: none;
-  color: clr(gray, 100);
-  background-color: clr(accent, 700);
+  color: clr("gray", 100);
+  background-color: clr("accent", 700);
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   transition: background-color 300ms ease-in-out;
 
   &:hover,
   &:focus-visible {
-    background-color: clr(accent, 500);
+    background-color: clr("accent", 500);
   }
 }

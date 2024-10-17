@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .note {
-  background-color: clr(gray, 900);
+  background-color: clr("gray", 900);
   border-radius: 1rem;
   padding: 1.5rem;
   width: min(100%, 80ch);
@@ -12,11 +12,11 @@
   gap: 1rem;
 
   h3 {
-    color: clr(accent, 500);
+    color: clr("accent", 500);
   }
 
   time {
-    color: clr(gray, 500);
+    color: clr("gray", 500);
     justify-self: end;
   }
 
