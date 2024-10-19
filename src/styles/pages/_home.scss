@@ -1,12 +1,26 @@
 section {
   min-height: 100vh;
   min-height: 100svh;
+  display: grid;
+  align-items: center;
+}
+
+.hero-container {
+  display: flex;
+  flex-flow: column nowrap;
+  > p {
+    font-size: 1em;
+    line-height: 1.5;
+    padding-block-end: 1rem;
+    max-width: 75ch;
+    margin-inline: auto;
+  }
 }
 
 .about-container {
   --size: 40.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 40.5rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 40rem), 1fr));
   justify-items: center;
   gap: 1rem;
 
@@ -20,6 +34,9 @@ section {
   flex-direction: column;
   justify-content: space-between;
   width: min(100%, var(--size));
+  overflow: hidden;
+  font-size: 1em;
+  line-height: 1.5;
 }
 
 .about-gallery {
@@ -72,8 +89,16 @@ section {
 }
 
 @media (min-width: 48rem) {
+  .hero-container {
+    > p {
+      font-size: 1.25em;
+      line-height: 1.5;
+      padding-block-end: 1rem;
+    }
+  }
   .about-textual {
     max-height: var(--size);
+    font-size: 1.25em;
   }
 
   .about-gallery {
