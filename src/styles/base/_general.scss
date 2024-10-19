@@ -1,5 +1,22 @@
 @use "../abstracts" as *;
 
+@property --w_raw {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 100vw;
+}
+
+@property --h_raw {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 100vh;
+}
+
+:root {
+  --w: tan(atan2(var(--w_raw), 1px));
+  --h: tan(atan2(var(--h_raw), 1px));
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -16,6 +16,18 @@
     width: max-content;
     border-radius: 1rem;
   }
+  &::after {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    white-space: nowrap;
+    user-select: none;
+    cursor: default;
+    font-size: 10px;
+    line-height: 1.5;
+    content: "viewport size: " counter(w) "x" counter(h);
+    counter-reset: h var(--h) w var(--w);
+  }
 }
 
 .nav {
