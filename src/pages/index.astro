@@ -49,7 +49,7 @@ const gallery: GalleryImage[] = [
 		<section id='hero'>
 			<Container styles='hero-container'>
 				<h1 class='text-6xl text-accent--500 text-center'>Good <Greeting /></h1>
-				<p class='pt-10 text-center'>
+				<p class='text-center'>
 					I’m a software developer with 3+ years of experience. I excel at creating exceptional user
 					experiences across various environments. My expertise spans a wide range of tools,
 					methodologies, and frameworks, allowing me to adapt seamlessly to diverse project
@@ -58,7 +58,7 @@ const gallery: GalleryImage[] = [
 				<Cta
 					href='/#about'
 					text='more about me'
-					styles='text-uppercase text-sm self-center mt-10 font-highlight'
+					styles='text-uppercase text-sm self-center font-highlight'
 				/>
 			</Container>
 		</section>
@@ -94,7 +94,7 @@ const gallery: GalleryImage[] = [
 			</Container>
 		</section>
 		<section id='notes'>
-			<Container styles="flex flex-column gap-5 py-15">
+			<Container styles="flex flex-column gap-5">
 				{notes.map(async (note) => {
 					const { Content } = await note.render()
 					return (

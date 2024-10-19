@@ -3,15 +3,21 @@ section {
   min-height: 100svh;
   display: grid;
   align-items: center;
+  scroll-snap-align: start;
+
+  &:target {
+    scroll-margin-block-start: 6rem;
+  }
 }
 
 .hero-container {
   display: flex;
   flex-flow: column nowrap;
+  gap: 1rem;
+
   > p {
     font-size: 1em;
     line-height: 1.5;
-    padding-block-end: 1rem;
     max-width: 75ch;
     margin-inline: auto;
   }

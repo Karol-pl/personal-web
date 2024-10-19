@@ -14,13 +14,3 @@ import logo from '../../../public/icons/logo.svg'
 		</ul>
 	</nav>
 </header>
-
-<script is:inline data-astro-rerun>
-	const burger = document.querySelector('.burger')
-	const navList = document.querySelector('#main-nav')
-
-	burger.addEventListener('click', () => {
-		burger.toggleAttribute('aria-expanded')
-		navList.classList.toggle('open')
-	})
-</script>
