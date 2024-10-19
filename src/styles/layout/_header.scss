@@ -16,6 +16,7 @@
     width: max-content;
     border-radius: 1rem;
   }
+
   &::after {
     position: absolute;
     right: 0;
@@ -96,7 +97,9 @@
 
     li {
       padding: 0.5rem 1rem;
+
       a {
+        z-index: 2;
         display: block;
         position: relative;
         text-decoration: none;

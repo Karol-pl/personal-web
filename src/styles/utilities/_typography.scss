@@ -5,7 +5,7 @@
   @if ($size-value >= 2) {
     .text-#{$size-name} {
       font-size: clamp(
-        calc(#{$size-value} * 0.3),
+        calc(#{$size-value} * 0.5),
         calc(($size-value / 1rem) / 90 * 100vw),
         #{$size-value}
       );

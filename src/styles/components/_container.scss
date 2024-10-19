@@ -3,5 +3,5 @@
   width: min(100% - 3rem, 90rem);
   margin-inline: auto;
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: calc(4px + 1.5625vw);
 }
