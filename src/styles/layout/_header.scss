@@ -10,16 +10,21 @@
   align-items: center;
   width: min(100%, 90rem);
   margin-inline: auto;
-  padding: 0.5rem 2rem;
+  padding-block: 0.5rem;
+  padding-inline: calc(0.25rem + 1vw);
 
   > a {
     width: max-content;
     border-radius: 1rem;
+
+    > img {
+      width: (100%, 120px);
+    }
   }
 
   &::after {
     position: absolute;
-    right: 0;
+    right: calc(0.25rem + 1vw);
     top: 0.5rem;
     white-space: nowrap;
     user-select: none;
@@ -28,12 +33,12 @@
     line-height: 1.5;
     content: "viewport size: " counter(w) "x" counter(h);
     counter-reset: h var(--h) w var(--w);
+    color: clr("gray", 600);
   }
 }
 
 .nav {
   position: relative;
-  padding: 1rem 1.5rem;
   border-radius: 1rem;
   > button {
     background-color: transparent;
@@ -73,22 +78,23 @@
   }
 
   > ul {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    top: 100%;
-    left: -70%;
-    background-color: clr("gray", 900);
-    border-radius: 0.5rem;
-    padding: 1rem 1rem;
+    position: relative;
+    list-style-type: none;
+    background-color: transparent;
+    opacity: 1;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    border: none;
     display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 1rem;
-    transition:
-      visibility 300ms ease-in-out,
-      opacity 300ms ease-in-out;
-    margin: 0;
+    flex-flow: row nowrap;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    transition: none;
+    padding: 0;
+    font-size: 0.875em;
+    line-height: 1.2;
 
     &.open {
       visibility: visible;
