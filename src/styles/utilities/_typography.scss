@@ -19,12 +19,6 @@
   }
 }
 
-// font-highlight
-.font-highlight {
-  font-family: $ff-highlight, ui-monospace, Monaco, Consolas, monospace;
-  letter-spacing: 0.1em;
-}
-
 // font-weights
 @each $weight-name, $weight-value in $font-weights {
   .text-#{$weight-name} {

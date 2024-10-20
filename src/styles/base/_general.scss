@@ -22,15 +22,30 @@ html {
 }
 
 body {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
   min-height: 100dvh;
   margin: 0;
-  padding-block-end: 1.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: $ff-primary, system-ui, "sans-serif";
+  font-family: $ff-primary, monospace, system-ui, "sans-serif";
   font-size: fs(base);
   background-color: $color-black;
   color: clr("gray", 100);
+
+  &::after {
+    position: absolute;
+    right: calc(0.25rem + 1vw);
+    top: 0.5rem;
+    white-space: nowrap;
+    user-select: none;
+    cursor: default;
+    font-size: 10px;
+    line-height: 1.5;
+    content: "viewport size: " counter(w) "x" counter(h);
+    counter-reset: h var(--h) w var(--w);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

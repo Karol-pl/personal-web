@@ -1,16 +1,11 @@
 ---
 import { Image } from 'astro:assets'
-import Container from '../components/Container.astro'
-import Cta from '../components/Cta.astro'
 import Greeting from '../components/Greeting.astro'
 import Scroller from '../components/Scroller.astro'
 import Layout from '../layouts/Layout.astro'
-import { getCollection } from 'astro:content'
-import Note from '../components/Note.astro'
+import "../styles/pages/_home.scss"
 
-const notes = (await getCollection('notes')).sort((a, b) => {
-	return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-})
+
 
 
 
@@ -46,64 +41,24 @@ const gallery: GalleryImage[] = [
 
 <Layout title='Karol Homziuk'>
 	<main>
-		<section id='hero'>
-			<Container styles='hero-container'>
-				<h1 class='text-6xl text-accent--500 text-center'>Good <Greeting /></h1>
-				<p class='text-center'>
+		<section class="container">
+				<div class='textual'>
+					<h1 class='text-5xl text-accent--500'>Good <Greeting /></h1>
+				<p>
 					I’m a software developer with 3+ years of experience. I excel at creating exceptional user
 					experiences across various environments. My expertise spans a wide range of tools,
 					methodologies, and frameworks, allowing me to adapt seamlessly to diverse project
 					requirements.
 				</p>
-				<Cta
-					href='/#about'
-					text='more about me'
-					styles='text-uppercase text-sm self-center font-highlight'
-				/>
-			</Container>
-		</section>
-		<section id='about'>
-			<Container styles='about-container'>
-				<div class='about-textual'>
-					<p>
-						I’m currently working as a front-end developer, it allows me to bring creative and user-friendly web experiences to life. I enjoy my work as
-						it keeps me on my toes, always learning new things and finding fresh approaches to solve problems 
-						in this fast-paced tech world.
-					</p>
-					<p>
-						Outside of work, I reside in Brazil with my wonderful fiancée. We like exploring new
-						places together, whether it’s a weekend getaway to a nearby beach or a a longer trip to another place. 
-						Traveling allows us to create unforgettable memories and
-						experiences.
-					</p>
-					<p>
-						In addition to our travels, I’m an avid basketball player. Hitting the court is my way
-						of staying active and having fun. It’s also a great way to unwind and connect with
-						other people.
-					</p>
-					<p>Also I'm a foodie, but enough about me, here's the tech I use daily:</p>
 					<Scroller height={4} width={4} />
 				</div>
-				<div class='about-gallery'>
+				<div class='gallery'>
 					{
 						gallery.map(({ id, url, alt }: GalleryImage) => (
 							<Image tabindex={0} src={url} alt={alt} class=`image-${id}` width={316} height={272} />
 						))
 					}
 				</div>
-			</Container>
-		</section>
-		<section id='notes'>
-			<Container styles="flex flex-column gap-5">
-				{notes.map(async (note) => {
-					const { Content } = await note.render()
-					return (
-						<Note title={note.data.title}  date={note.data.date}>
-							<Content />
-						</Note>
-					)
-				})}
-			</Container>
 		</section>
 	</main>
 </Layout>

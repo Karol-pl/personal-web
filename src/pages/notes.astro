@@ -1,0 +1,28 @@
+---
+import Note from '../components/Note.astro'
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import '../styles/pages/_notes.scss'
+
+const notes = (await getCollection('notes')).sort((a, b) => {
+	return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+})
+---
+
+<Layout title="Karol's notes">
+	<main>
+		<section class='notes'>
+			<a href='/'>Go back</a>
+			{
+				notes.map(async (note) => {
+					const { Content } = await note.render()
+					return (
+						<Note title={note.data.title} date={note.data.date}>
+							<Content />
+						</Note>
+					)
+				})
+			}
+		</section>
+	</main>
+</Layout>
