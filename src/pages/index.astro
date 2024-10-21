@@ -19,22 +19,22 @@ const gallery: GalleryImage[] = [
 	{
 		id: 1,
 		url: '/asset1.webp',
-		alt: 'Me, my fiancée and Shiva',
+		alt: 'Me, my fiancée and Shiva - our dog.',
 	},
 	{
 		id: 2,
 		url: '/asset2.webp',
-		alt: 'Road trip on Ilhabela, SP',
+		alt: 'Road trip on Ilhabela, SP.',
 	},
 	{
 		id: 3,
 		url: '/asset3.webp',
-		alt: 'View of ocean',
+		alt: 'View of ocean in Ilhabela, SP.',
 	},
 	{
 		id: 4,
 		url: '/asset4.webp',
-		alt: 'Burgers and drinks',
+		alt: 'Burgers and drinks in Sao Paulo city.',
 	},
 ]
 ---
@@ -45,17 +45,17 @@ const gallery: GalleryImage[] = [
 				<div class='textual'>
 					<h1 class='text-5xl text-accent--500'>Good <Greeting /></h1>
 				<p>
-					I’m a software developer with 3+ years of experience. I excel at creating exceptional user
-					experiences across various environments. My expertise spans a wide range of tools,
-					methodologies, and frameworks, allowing me to adapt seamlessly to diverse project
-					requirements.
+					I’m a software developer with three years of experience, originally from Poland and now living in Brazil with my fiancée. 
+					I genuinely enjoy my work and the challenges it brings. 
+					When I'm not coding, I love to unwind by playing basketball.
 				</p>
+				<p>Tools I use:</p>
 					<Scroller height={4} width={4} />
 				</div>
 				<div class='gallery'>
 					{
 						gallery.map(({ id, url, alt }: GalleryImage) => (
-							<Image tabindex={0} src={url} alt={alt} class=`image-${id}` width={316} height={272} />
+							<Image tabindex={0} src={url} alt={alt} class=`image-${id}` title={alt} width={316} height={272} />
 						))
 					}
 				</div>
