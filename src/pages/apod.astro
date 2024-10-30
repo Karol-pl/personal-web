@@ -20,7 +20,7 @@ const data = await response.json()
 				<time datetime={data.date}>{data.date}</time>
 			</div>
 			<a href={data.url} target='_blank' rel='noopener noreferrer'>
-				<Image src={data.url} alt={data.title} width={800} height={600} />
+				<Image src={data.url} alt={`${data.title}, ${data.copyright}`} inferSize={true} />
 			</a>
 			<p>{data.explanation}</p>
 		</section>
