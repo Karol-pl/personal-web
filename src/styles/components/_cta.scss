@@ -2,7 +2,7 @@
 
 .cta {
   text-decoration: none;
-  color: clr("gray", 100);
+  color: clr("gray", 100) !important;
   background-color: clr("accent", 700);
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
@@ -11,5 +11,6 @@
   &:hover,
   &:focus-visible {
     background-color: clr("accent", 500);
+    color: clr("gray", 100) !important;
   }
 }
