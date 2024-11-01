@@ -1,12 +1,16 @@
 @use "../abstracts" as *;
+
 .apod {
   width: min(100% - 3rem, 90rem);
   margin-inline: auto;
   padding: calc(16px + 1.5625vw);
 
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1rem, calc(3 / 90 * 100vw), 3rem);
+  > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, calc(3 / 90 * 100vw), 3rem);
+    padding-block-start: 1rem;
+  }
 
   time {
     color: clr("gray", 300);
@@ -29,7 +33,7 @@
 }
 
 @media (min-width: 48rem) {
-  .apod {
+  .apod > div {
     grid-template-columns: 1fr 2fr;
   }
 }

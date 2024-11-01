@@ -13,16 +13,19 @@ const data = await response.json()
 <Layout title='Astronomy Picture of the Day by NASA'>
 	<main>
 		<section class='apod'>
-			<h1 class='text-2xl text-accent--500'>Astronomy Picture of the Day</h1>
+			<a href='/'>&#8592; Go home</a>
 			<div>
-				<h2 class='text-xl'>{data.title}</h2>
-				<small>Copyrights: {data.copyright}</small>
-				<time datetime={data.date}>{data.date}</time>
+				<h1 class='text-2xl text-accent--500'>Astronomy Picture of the Day</h1>
+				<div>
+					<h2 class='text-xl'>{data.title}</h2>
+					<small>Copyrights: {data.copyright}</small>
+					<time datetime={data.date}>{data.date}</time>
+				</div>
+				<a href={data.url} target='_blank' rel='noopener noreferrer'>
+					<Image src={data.url} alt={`${data.title}, ${data.copyright}`} inferSize={true} />
+				</a>
+				<p>{data.explanation}</p>
 			</div>
-			<a href={data.url} target='_blank' rel='noopener noreferrer'>
-				<Image src={data.url} alt={`${data.title}, ${data.copyright}`} inferSize={true} />
-			</a>
-			<p>{data.explanation}</p>
 		</section>
 	</main>
 </Layout>

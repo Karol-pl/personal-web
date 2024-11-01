@@ -12,7 +12,7 @@ const notes = (await getCollection('notes')).sort((a, b) => {
 <Layout title="Karol's notes">
 	<main>
 		<section class='notes'>
-			<a href='/'>&#8592; Go back</a>
+			<a href='/'>&#8592; Go home</a>
 			{
 				notes.map(async (note) => {
 					const { Content } = await note.render()
