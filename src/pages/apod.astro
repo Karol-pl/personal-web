@@ -22,11 +22,17 @@ const data = await response.json()
 					<time datetime={data.date}>{data.date}</time>
 				</div>
 				<a href={data.url} target='_blank' rel='noopener noreferrer'>
-					<Image
-						src={data.url}
-						alt={`${data.title}, ${data.copyright || 'NASA'}`}
-						inferSize={true}
-					/>
+					{
+						data.media_type === 'video' ? (
+							<iframe src={data.url} title={data.title} frameborder='0' />
+						) : (
+							<Image
+								src={data.url}
+								alt={`${data.title}, ${data.copyright || 'NASA'}`}
+								inferSize={true}
+							/>
+						)
+					}
 				</a>
 				<p>{data.explanation}</p>
 			</div>
