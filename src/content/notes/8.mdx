@@ -1,0 +1,26 @@
+---
+title: "Small git tip"
+date: 2025-01-08
+---
+import { Code } from "astro:components";
+
+If you didn't know <Code code={`git add`} lang="shell" theme="tokyo-night" inline /> have some options, one of them is <Code code={`-p`} lang="shell" theme="tokyo-night" inline /> which allows you to stage changes interactively. 
+This is great when you have a file with multiple changes and want to commit only some of them.
+Each patch is visually presented and you can choose to either:
+
+y - stage current patch
+
+n - do not stage current patch
+
+q - quit; which result in not staging current and all the following patches
+
+a - stage current and all following patches
+
+d - do not stage current and following patches
+
+e - manually edit current patch
+
+? - help
+
+It's a great way to review your changes before committing them.
+
