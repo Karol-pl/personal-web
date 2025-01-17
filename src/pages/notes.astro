@@ -7,6 +7,10 @@ import '../styles/pages/_notes.scss'
 const notes = (await getCollection('notes')).sort((a, b) => {
 	return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 })
+
+// const publicNotes = notes.filter((note) => note.data.draft ? false : true)
+
+
 ---
 
 <Layout title="Karol's notes">
