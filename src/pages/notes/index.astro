@@ -1,12 +1,14 @@
 ---
-import Note from '../components/Note.astro'
-import Layout from '../layouts/Layout.astro'
+import Note from '../../components/Note.astro'
+import Layout from '../../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
-import '../styles/pages/_notes.scss'
+import '../../styles/pages/_notes.scss'
 
 const notes = (await getCollection('notes')).sort((a, b) => {
 	return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 })
+
+
 
 // const publicNotes = notes.filter((note) => note.data.draft ? false : true)
 
@@ -21,7 +23,7 @@ const notes = (await getCollection('notes')).sort((a, b) => {
 				notes.map(async (note) => {
 					const { Content } = await note.render()
 					return (
-						<Note title={note.data.title} date={note.data.date}>
+      <Note title={note.data.title} date={note.data.date} slug={note.slug}>
 							<Content />
 						</Note>
 					)
