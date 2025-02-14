@@ -8,10 +8,7 @@ const notes = (await getCollection('notes')).sort((a, b) => {
 	return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 })
 
-
-
 // const publicNotes = notes.filter((note) => note.data.draft ? false : true)
-
 
 ---
 
@@ -23,7 +20,7 @@ const notes = (await getCollection('notes')).sort((a, b) => {
 				notes.map(async (note) => {
 					const { Content } = await note.render()
 					return (
-      <Note title={note.data.title} date={note.data.date} slug={note.slug}>
+      			<Note title={note.data.title} date={note.data.date} slug={note.slug}>
 							<Content />
 						</Note>
 					)

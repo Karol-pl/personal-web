@@ -26,9 +26,9 @@ const { Content } = await render(note)
 ---
 
 <Layout title={note.data.title}>
-  <main class='wrapper'>
+  <main class='note_wrapper'>
     <a href='/notes'>&#8592; Go back</a>
-    <section class='container'>
+    <section class='note_container'>
       <header>
         <h1>{note.data.title}</h1>
         <time datetime={note.data.date.toISOString()}>{note.data.date.toDateString()}</time>

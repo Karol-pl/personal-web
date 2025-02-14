@@ -1,6 +1,6 @@
 @use "../abstracts/" as *;
 
-.wrapper {
+.note_wrapper {
   height: 100%;
   width: 100%;
 
@@ -13,7 +13,7 @@
   }
 }
 
-.container {
+.note_container {
   width: min(80ch, 100%);
   margin-inline: auto;
   padding-block: 2rem;
