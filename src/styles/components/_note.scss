@@ -1,8 +1,8 @@
 @use "../abstracts" as *;
 
 .note {
-  background-color: clr("gray", 900);
-  border-radius: 1rem;
+  border: 1px solid clr("gray", 900);
+  // border-radius: 1rem;
   padding: 1.5rem;
   width: min(100%, 80ch);
   margin-inline: auto;
