@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import '../../styles/pages/_note.scss'
+
+const notes = (await getCollection('notes')).sort((a, b) => {
+  return new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+})
+
+const current = notes.findIndex((note) => note.slug === Astro.params.id)
+const next = notes[current + 1] || null
+const prev = notes[current - 1] || null
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes')
+ 
+  return notes.map((note) => ({
+    params: { id: note.slug },
+    props: { note }
+  }))
+}
+
+
+const { note } = Astro.props
+const { Content } = await render(note)
+---
+
+<Layout title={note.data.title}>
+  <main class='note_wrapper'>
+    <a href='/notes'>&#8592; Go back</a>
+    <section class='note_container'>
+      <header>
+        <h1>{note.data.title}</h1>
+        <time datetime={note.data.date.toISOString()}>{note.data.date.toDateString()}</time>
+      </header>
+      <article>
+        <Content />
+      </article>
+    </section>
+    <div>
+        {prev && <a href={`/notes/${prev.slug}`}>← previous note</a>}
+        {next && <a href={`/notes/${next.slug}`}>next note →</a>}
+      </div>
+  </main>
+</Layout>
+
