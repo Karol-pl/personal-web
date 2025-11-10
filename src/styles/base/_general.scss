@@ -23,6 +23,7 @@ html {
 
 body {
   display: grid;
+  grid-template-rows: 1fr auto;
   align-items: center;
   gap: 2rem;
   min-height: 100dvh;

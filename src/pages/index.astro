@@ -1,60 +1,14 @@
 ---
-import { Image } from 'astro:assets'
-import Greeting from '../components/Greeting.astro'
-import Scroller from '../components/Scroller.astro'
 import Layout from '../layouts/Layout.astro'
 import "../styles/pages/_home.scss"
 
-interface GalleryImage {
-	id: number
-	url: string
-	alt: string
-}
 
-const gallery: GalleryImage[] = [
-	{
-		id: 1,
-		url: '/asset1.webp',
-		alt: 'Me, my fiancée and Shiva - our dog.',
-	},
-	{
-		id: 2,
-		url: '/asset2.webp',
-		alt: 'Road trip on Ilhabela, SP.',
-	},
-	{
-		id: 3,
-		url: '/asset3.webp',
-		alt: 'View of ocean in Ilhabela, SP.',
-	},
-	{
-		id: 4,
-		url: '/asset4.webp',
-		alt: 'Burgers and drinks in Sao Paulo city.',
-	},
-]
 ---
 
-<Layout title='Karol Homziuk'>
+<Layout title='Karol Homziuk - new coming soon'>
 	<main>
 		<section class="container">
-				<div class='textual'>
-					<h1 class='text-5xl text-accent--500'>Good <Greeting /></h1>
-				<p>
-					I’m a software developer with three years of experience, originally from Poland and now living in Brazil with my fiancée. 
-					I genuinely enjoy my work and the challenges it brings. 
-					When I'm not coding, I love to unwind by playing basketball.
-				</p>
-				<p>Tools I use:</p>
-					<Scroller height={4} width={4} />
-				</div>
-				<div class='gallery'>
-					{
-						gallery.map(({ id, url, alt }: GalleryImage) => (
-							<Image tabindex={0} src={url} alt={alt} class=`image-${id}` title={alt} width={316} height={272} />
-						))
-					}
-				</div>
+					<h1 class='text-5xl text-accent--500 text-center'>Coming soon</h1>
 		</section>
 	</main>
 </Layout>
