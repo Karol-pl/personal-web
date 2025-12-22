@@ -1,26 +1,21 @@
 ---
-import Footer from '../components/layout/Footer.astro'
-import LocalScripts from '../components/LocalScripts.astro'
 interface Props {
-	title: string
+  title: string
+  desscription: string
 }
 
-const { title } = Astro.props
-import '../styles/main.scss'
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
 <html lang='en'>
 	<head>
 		<meta charset='UTF-8' />
-		<meta name='description' content='Software Developer' />
 		<meta name='viewport' content='width=device-width' />
-		<link rel='icon' type='image/svg+xml' href='/icons/favicon.svg' />
 		<title>{title}</title>
+    <meta name="description" content={description} />
 	</head>
 	<body>
 		<slot />
-		<Footer />
-		<LocalScripts />
 	</body>
 </html>
