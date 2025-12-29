@@ -1,70 +1,97 @@
 ---
+
 ---
 
-<button class='theme-toggle' aria-label='Toggle color theme' id='theme-toggle'>
-  <svg class='icon icon-sun' xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0' /><path d='M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7' /></svg>
-  <svg class='icon icon-moon' xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z' /></svg>
+<button class="theme-toggle" aria-label="Toggle color theme" id="theme-toggle">
+	<svg
+		class="icon icon-sun"
+		xmlns="http://www.w3.org/2000/svg"
+		width="22"
+		height="22"
+		viewBox="0 0 24 24"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path
+			d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+		></path></svg
+	>
+	<svg
+		class="icon icon-moon"
+		xmlns="http://www.w3.org/2000/svg"
+		width="22"
+		height="22"
+		viewBox="0 0 24 24"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		><path
+			d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+		></path></svg
+	>
 </button>
 
 <style>
-  .theme-toggle {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--muted);
-    background: transparent;
-    cursor: pointer;
-  }
+	.theme-toggle {
+		position: relative;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--muted);
+		background: transparent;
+		cursor: pointer;
+	}
 
-  .icon {
-    position: absolute;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
+	.icon {
+		position: absolute;
+		transition:
+			opacity 0.4s ease,
+			transform 0.4s ease;
+	}
 
-  .icon-sun {
-    stroke: #f59e0b;
-    fill: #f59e0b;
-  }
+	.icon-sun {
+		stroke: #f59e0b;
+		fill: #f59e0b;
+	}
 
-  .icon-moon {
-    stroke: #fbbf24;
-    fill: #fbbf24;
-  }
+	.icon-moon {
+		stroke: #fbbf24;
+		fill: #fbbf24;
+	}
 
-  :global([data-theme='light']) .icon-sun {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0.8);
-  }
+	:global([data-theme='light']) .icon-sun {
+		opacity: 0;
+		transform: rotate(-90deg) scale(0.8);
+	}
 
-  :global([data-theme='light']) .icon-moon {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
+	:global([data-theme='light']) .icon-moon {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
+	}
 
-  :global([data-theme='dark']) .icon-moon {
-    opacity: 0;
-    transform: rotate(90deg) scale(0.8);
-  }
+	:global([data-theme='dark']) .icon-moon {
+		opacity: 0;
+		transform: rotate(90deg) scale(0.8);
+	}
 
-  :global([data-theme='dark']) .icon-sun {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
+	:global([data-theme='dark']) .icon-sun {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
+	}
 </style>
 
 <script is:inline>
-  const btn = document.getElementById('theme-toggle')
-  const root = document.documentElement
-  if (btn) {
-    btn.addEventListener('click', () => {
-      const next = root.dataset.theme === 'dark' ? 'light' : 'dark'
-      root.dataset.theme = next
-      try {
-        localStorage.setItem('theme', next)
-      } catch {}
-    })
-  }
+	const btn = document.getElementById('theme-toggle')
+	const root = document.documentElement
+	if (btn) {
+		btn.addEventListener('click', () => {
+			const next = root.dataset.theme === 'dark' ? 'light' : 'dark'
+			root.dataset.theme = next
+			try {
+				localStorage.setItem('theme', next)
+			} catch {}
+		})
+	}
 </script>
