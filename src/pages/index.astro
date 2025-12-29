@@ -1,14 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Greeting from '../components/greeting/index.astro'
-
+import ThemeToggle from '../components/theme-toggle/index.astro'
 ---
 
-<Layout title='Karol Homziuk - new coming soon' description="some description">
-	<main>
-		<section class="container">
-      <Greeting  />
-		</section>
-	</main>
-</Layout>
+<Layout title='Karol Homziuk' description='Personal website'>
+  <main>
+    <section class='container'>
+      <header>
+        <h1>Karol Homziuk</h1>
+        <p class='tagline'>Software engineer • Building clean and fast products</p>
+        <ThemeToggle />
+      </header>
+    </section>
 
+    <section class='container' id='about'>
+      <h2>About</h2>
+      <p>
+        I enjoy working with TypeScript and Astro, optimizing build pipelines, and crafting ergonomic developer experiences.
+      </p>
+    </section>
+
+    <section class='container' id='projects'>
+      <h2>Projects</h2>
+      <ul>
+        <li><a href='https://github.com/Karol-pl'>GitHub</a></li>
+        <li><a href='https://www.linkedin.com/in/karol-homziuk/'>LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <section class='container' id='contact'>
+      <h2>Contact</h2>
+      <p>
+        Reach me via <a href='mailto:karol.homziuk@gmail.com'>email</a> or ping me on LinkedIn.
+      </p>
+    </section>
+  </main>
+</Layout>
