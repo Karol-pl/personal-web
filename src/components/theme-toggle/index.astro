@@ -48,17 +48,33 @@
 		position: absolute;
 		transition:
 			opacity 0.4s ease,
-			transform 0.4s ease;
+			transform 0.4s ease,
+			stroke 0.25s ease,
+			fill 0.25s ease;
 	}
 
 	.icon-sun {
-		stroke: #f59e0b;
-		fill: #f59e0b;
+		stroke: var(--text);
+		fill: none;
 	}
 
 	.icon-moon {
+		stroke: var(--text);
+		fill: none;
+	}
+
+	.theme-toggle:hover .icon-sun,
+	.theme-toggle:focus-visible .icon-sun {
+		stroke: #f59e0b;
+		fill: #f59e0b;
+		transform: scale(1.1) rotate(15deg);
+	}
+
+	.theme-toggle:hover .icon-moon,
+	.theme-toggle:focus-visible .icon-moon {
 		stroke: #fbbf24;
 		fill: #fbbf24;
+		transform: scale(1.1) rotate(-10deg);
 	}
 
 	:global([data-theme='light']) .icon-sun {
