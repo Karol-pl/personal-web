@@ -17,13 +17,13 @@ git clone https://github.com/Karol-pl/personal-web.git
 Install dependencies
 
 ```bash
-npm i
+pnpm i
 ```
 
 ## Run locally:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## License
