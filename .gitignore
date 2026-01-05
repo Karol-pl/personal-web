@@ -30,3 +30,6 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# LLM docs
+AGENTS.md

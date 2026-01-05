@@ -1,15 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import "../styles/pages/_home.scss"
-
-
+import Hero from './_sections/hero/index.astro'
+import About from './_sections/about/index.astro'
+import Contact from './_sections/contact/index.astro'
 ---
 
-<Layout title='Karol Homziuk - new coming soon'>
-	<main>
-		<section class="container">
-					<h1 class='text-5xl text-accent--500 text-center'>Coming soon</h1>
-		</section>
+<Layout title="Karol Homziuk" description="Personal website">
+	<main class="main">
+		<Hero />
+		<About />
+		<Contact />
 	</main>
 </Layout>
 
+<style></style>

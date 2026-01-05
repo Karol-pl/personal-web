@@ -1,23 +1,27 @@
 {
-  "name": "personal-website",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/mdx": "^4.2.1",
-    "@netlify/functions": "^2.8.2",
-    "astro": "^5.5.3",
-    "typescript": "^5.6.2"
-  },
-  "devDependencies": {
-    "@types/node": "^22.8.6",
-    "sass": "^1.78.0"
-  }
+	"name": "personal-website",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "prettier --write \"**/*.astro\"",
+		"format:check": "prettier --check \"**/*.astro\""
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.3",
+		"@astrojs/mdx": "^4.2.1",
+		"@netlify/functions": "^2.8.2",
+		"astro": "^5.5.3",
+		"typescript": "^5.6.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.10",
+		"@types/node": "^22.8.6",
+		"prettier": "^3.7.4",
+		"prettier-plugin-astro": "^0.14.1"
+	}
 }
