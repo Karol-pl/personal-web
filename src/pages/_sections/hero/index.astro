@@ -1,35 +1,30 @@
 ---
+import SectionWrapper from '../../../components/section-wrapper/index.astro'
 import ThemeToggle from '../../../components/theme-toggle/index.astro'
 ---
 
-<section class="container">
+<SectionWrapper class="hero">
 	<header>
 		<h1>Karol Homziuk</h1>
 		<ThemeToggle />
 		<p>Software developer | 4+ years experience</p>
 	</header>
-</section>
+</SectionWrapper>
 
 <style>
-	.container {
-		width: min(100% - 2rem, 50rem);
-		margin-inline: auto;
-		padding-block: clamp(1rem, calc(2 / 50 * 100vw), 2rem);
+	.hero h1 {
+		font-size: clamp(2rem, calc(2.5 / 50 * 100vw), 2.5rem);
+		line-height: 1;
+		letter-spacing: 1px;
+	}
 
-		h1 {
-			font-size: clamp(2rem, calc(2.5 / 50 * 100vw), 2.5rem);
-			line-height: 1;
-			letter-spacing: 1px;
-		}
+	.hero p {
+		font-size: 0.875rem;
+		letter-spacing: -0.5px;
+	}
 
-		p {
-			font-size: 0.875rem;
-			letter-spacing: -0.5px;
-		}
-
-		header {
-			display: grid;
-			grid-template-columns: 1fr auto;
-		}
+	.hero header {
+		display: grid;
+		grid-template-columns: 1fr auto;
 	}
 </style>

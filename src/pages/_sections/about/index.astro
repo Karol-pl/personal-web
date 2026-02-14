@@ -1,10 +1,10 @@
 ---
-
+import SectionWrapper from '../../../components/section-wrapper/index.astro'
 ---
 
-<section class="container" id="about">
+<SectionWrapper class="about" id="about">
 	<p>
-		For over four years, I’ve been building for the web, crafting everything
+		For over four years, I've been building for the web, crafting everything
 		from complex interactive applications to high-performance websites.
 	</p>
 	<p>
@@ -13,19 +13,13 @@
 		Hugo.
 	</p>
 	<p>
-		While I focus primarily on the frontend, I’m comfortable navigating the full
+		While I focus primarily on the frontend, I'm comfortable navigating the full
 		stack, utilizing Node.js and Golang to drive backend logic.
 	</p>
-</section>
+</SectionWrapper>
 
 <style>
-	.container {
-		width: min(100% - 2rem, 50rem);
-		margin-inline: auto;
-		padding-block: clamp(1rem, calc(2 / 50 * 100vw), 2rem);
-
-		p:not(:last-child) {
-			margin-block-end: 1rem;
-		}
+	.about p:not(:last-child) {
+		margin-block-end: 1rem;
 	}
 </style>

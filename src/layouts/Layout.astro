@@ -36,6 +36,7 @@ const { title, description } = Astro.props
 				--text: #0f172a;
 				--accent: #2563eb;
 				--muted: #64748b;
+				--grid-line: color-mix(in srgb, var(--text) 10%, transparent);
 			}
 
 			[data-theme='dark'] {
@@ -78,6 +79,7 @@ const { title, description } = Astro.props
 					'Segoe UI Emoji';
 				margin: 0;
 				padding: 0;
+				min-height: 100vh;
 				transition:
 					background 0.3s ease,
 					color 0.3s ease;

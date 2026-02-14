@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Hero from './_sections/hero/index.astro'
 import About from './_sections/about/index.astro'
 import Contact from './_sections/contact/index.astro'
+import Hero from './_sections/hero/index.astro'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Karol Homziuk" description="Personal website">
@@ -13,4 +13,10 @@ import Contact from './_sections/contact/index.astro'
 	</main>
 </Layout>
 
-<style></style>
+<style>
+	.main {
+		min-height: 100vh;
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+	}
+</style>
