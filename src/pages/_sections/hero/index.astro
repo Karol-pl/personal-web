@@ -6,25 +6,32 @@ import ThemeToggle from '../../../components/theme-toggle/index.astro'
 <SectionWrapper class="hero">
 	<header>
 		<h1>Karol Homziuk</h1>
-		<ThemeToggle />
-		<p>Software developer | 4+ years experience</p>
+		<div class="toggle-wrapper">
+			<ThemeToggle />
+		</div>
 	</header>
+	<p>Software developer | 4+ years experience</p>
 </SectionWrapper>
 
 <style>
-	.hero h1 {
+	h1 {
 		font-size: clamp(2rem, calc(2.5 / 50 * 100vw), 2.5rem);
 		line-height: 1;
 		letter-spacing: 1px;
 	}
 
-	.hero p {
+	p {
 		font-size: 0.875rem;
 		letter-spacing: -0.5px;
 	}
 
-	.hero header {
-		display: grid;
-		grid-template-columns: 1fr auto;
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.toggle-wrapper {
+		flex-shrink: 0;
 	}
 </style>
