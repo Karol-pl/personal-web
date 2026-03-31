@@ -19,7 +19,7 @@
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.4.8",
+		"@biomejs/biome": "^2.4.10",
 		"@types/node": "^22.19.15",
 		"prettier": "^3.8.1",
 		"prettier-plugin-astro": "^0.14.1"
