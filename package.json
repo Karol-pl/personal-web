@@ -12,10 +12,10 @@
 		"format:check": "prettier --check \"**/*.astro\""
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.9.8",
-		"@astrojs/mdx": "^5.0.3",
+		"@astrojs/check": "^0.9.10",
+		"@astrojs/mdx": "^7.0.7",
 		"@netlify/functions": "^2.8.2",
-		"astro": "^6.1.6",
+		"astro": "^7.2.4",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
